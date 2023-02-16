@@ -12,7 +12,7 @@ ActiveRecord::Base.transaction do
     puts 'Destroying tables...'
     User.delete_all
     Artwork.delete_all
-    ArtworkShares.delete_all
+    ArtworkShare.delete_all
 
     puts 'Resetting id sequences...'
     %w(users artworks artwork_shares).each do |table_name|

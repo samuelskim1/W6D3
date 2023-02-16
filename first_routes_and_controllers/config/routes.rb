@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :users
+  # resources :users, only: [:create, :destroy, :index, :show, :update]
+  resources :artworks, only: [:create, :destroy, :index, :show, :update]
+  resources :artwork_shares, only: [:create, :destroy]
+  resources :users, only: [:create, :destroy, :index, :show, :update] do
+    resources :artworks, only: [:index]
+  end
+
   # get 'users/', to: 'users#index'
   # get 'users/:id', to: 'users#show'
   # patch 'users/:id', to: 'users#update'
