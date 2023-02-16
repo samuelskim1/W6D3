@@ -13,6 +13,7 @@ ActiveRecord::Base.transaction do
     User.delete_all
     Artwork.delete_all
     ArtworkShare.delete_all
+    # Comment.delete_all
 
     puts 'Resetting id sequences...'
     %w(users artworks artwork_shares).each do |table_name|
@@ -101,7 +102,24 @@ ActiveRecord::Base.transaction do
     )
 
 
+    # Comment.create!(
+    #     author_id:1,
+    #     artwork_id:3,
+    #     body: 'hi'
+    # )
+
+    # Comment.create!(
+    #     author_id:2,
+    #     artwork_id:1,
+    #     body: 'commenting on Sams first art'
+
+    # )
 
 
+    # Comment.create!(
+    #     author_id:3,
+    #     artwork_id:1,
+    #     body: 'second comment on Sams first art'
 
+    # )
 end
